@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Geladeira smarth",
+      "price": 3500.65
+    },
+    {
+      "id": 2,
+      "name": "Smartphone - Galaxy S21",
+      "price": 8000.65
+    },
+    {
+      "id": 3,
+      "name": "Macbook pro",
+      "price": 45000.98
+    }
+  ]
+}

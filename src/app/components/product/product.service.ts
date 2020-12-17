@@ -9,7 +9,7 @@ import { Observable } from "rxjs";
 })
 export class ProductService {
 
-  private baseUrl:string = 'http://localhost:3000/products'
+  private baseApiUrl:string = 'http://localhost:3000/products'
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -22,7 +22,11 @@ export class ProductService {
   }
 
   create(product: Product): Observable<Product>{
-    return this.http.post<Product>(this.baseUrl, product)
+    return this.http.post<Product>(this.baseApiUrl, product)
+  }
+
+  read(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.baseApiUrl)
   }
 
 }

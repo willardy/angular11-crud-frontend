@@ -20,12 +20,20 @@ export class ProductCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createProduct(): void {
-    this.productService.create(this.product).subscribe(() => {
-      this.productService.showMessage("Produto cadastrado com sucesso")
-      this.router.navigate(['/products'])
-    })
-  }
+    createProduct(): void {
+        if(this.product.name !== '' && this.product.price !== 0.0){
+            this.productService.create(this.product).subscribe(
+                () => {
+                    this.productService.showMessage("Produto cadastrado com sucesso.")
+                    this.router.navigate(['/products'])
+                },
+                () => {
+                    this.productService.showMessage("Ocorreu algum problema, tente novamente mais tarde.", true)
+                })
+        }else{
+            this.productService.showMessage("Preencha todos os campos", true)
+        }
+    }
 
   cancel(): void {
     this.router.navigate(['/products'])

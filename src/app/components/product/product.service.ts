@@ -13,11 +13,13 @@ export class ProductService {
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
-  showMessage(msg: string) {
-    this.snackBar.open(msg,'fechar',{
+  showMessage(msg: string, isError: boolean = false) {
+    this.snackBar.open(msg,'Fechar',{
       duration: 3000,
       verticalPosition: "top",
-      horizontalPosition: "right"
+      horizontalPosition: "center",
+      panelClass: isError ? ['msg-error'] : ['msg-sucess'],
+
     })
   }
 

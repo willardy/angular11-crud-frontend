@@ -17,13 +17,8 @@
     },
     {
       "name": "Steam Game - Cyberpunk 2077",
-      "price": "200,00",
+      "price": 200.00,
       "id": 4
-    },
-    {
-      "name": "Steam Game - Cyberpunk 2077",
-      "price": "200.00",
-      "id": 5
     }
   ]
 }
